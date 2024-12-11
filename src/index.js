@@ -1,10 +1,9 @@
-import sum from './test';
-import './styles/main.scss';
-import calvin from './assets/calvin.jpeg';
+import React, { lazy } from 'react';
+const App = lazy(() => import('./App'));
 
-const calvinImg = document.getElementById('img');
-calvinImg.src = calvin;
+import { createRoot } from 'react-dom/client';
 
-const testSum = sum(1)(2)(3)();
+const domNode = document.getElementById('app');
+const root = createRoot(domNode);
 
-console.log(testSum);
+root.render(<App />);
